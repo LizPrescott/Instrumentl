@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_160545) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_160917) do
   create_table "inspections", force: :cascade do |t|
     t.integer "inspection_score"
     t.date "inspection_date"
@@ -23,6 +23,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_160545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_inspections_on_restaurant_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
