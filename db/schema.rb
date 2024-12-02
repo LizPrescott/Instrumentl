@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_160917) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_163120) do
   create_table "inspections", force: :cascade do |t|
     t.integer "inspection_score"
     t.date "inspection_date"
@@ -43,7 +43,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_160917) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "owner_id", null: false
+    t.index ["owner_id"], name: "index_restaurants_on_owner_id"
   end
 
   add_foreign_key "inspections", "restaurants"
+  add_foreign_key "restaurants", "owners"
 end
