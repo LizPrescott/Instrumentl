@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_155349) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_02_160545) do
+  create_table "inspections", force: :cascade do |t|
+    t.integer "inspection_score"
+    t.date "inspection_date"
+    t.integer "inspection_type"
+    t.date "violation_date"
+    t.integer "violation_type"
+    t.integer "risk_category"
+    t.text "description"
+    t.integer "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_inspections_on_restaurant_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -20,4 +34,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_155349) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "inspections", "restaurants"
 end

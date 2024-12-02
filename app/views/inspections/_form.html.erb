@@ -1,0 +1,57 @@
+<%= form_with(model: inspection) do |form| %>
+  <% if inspection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(inspection.errors.count, "error") %> prohibited this inspection from being saved:</h2>
+
+      <ul>
+        <% inspection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :inspection_score, style: "display: block" %>
+    <%= form.number_field :inspection_score %>
+  </div>
+
+  <div>
+    <%= form.label :inspection_date, style: "display: block" %>
+    <%= form.date_field :inspection_date %>
+  </div>
+
+  <div>
+    <%= form.label :inspection_type, style: "display: block" %>
+    <%= form.number_field :inspection_type %>
+  </div>
+
+  <div>
+    <%= form.label :violation_date, style: "display: block" %>
+    <%= form.date_field :violation_date %>
+  </div>
+
+  <div>
+    <%= form.label :violation_type, style: "display: block" %>
+    <%= form.number_field :violation_type %>
+  </div>
+
+  <div>
+    <%= form.label :risk_category, style: "display: block" %>
+    <%= form.number_field :risk_category %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.label :restaurant_id, style: "display: block" %>
+    <%= form.text_field :restaurant_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
