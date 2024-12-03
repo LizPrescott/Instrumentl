@@ -65,6 +65,6 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.expect(restaurant: [ :name, :address, :city, :postal_code, :phone_number ])
+      params.expect(restaurant: [ :name, :address, :city, :postal_code, :phone_number, :owner_name, :owner_address, :owner_city, :owner_state, :owner_zip ])
     end
 end

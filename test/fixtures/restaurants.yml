@@ -6,7 +6,6 @@ one:
   city: MyString
   postal_code: MyString
   phone_number: MyString
-  owner: one
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   city: MyString
   postal_code: MyString
   phone_number: MyString
-  owner: two

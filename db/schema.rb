@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_163120) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_03_193508) do
   create_table "inspections", force: :cascade do |t|
     t.integer "inspection_score"
     t.date "inspection_date"
@@ -25,16 +25,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_163120) do
     t.index ["restaurant_id"], name: "index_inspections_on_restaurant_id"
   end
 
-  create_table "owners", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -43,10 +33,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_02_163120) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "owner_id", null: false
-    t.index ["owner_id"], name: "index_restaurants_on_owner_id"
+    t.string "owner_name"
+    t.string "owner_address"
+    t.string "owner_city"
+    t.string "owner_state"
+    t.string "owner_zip"
   end
 
   add_foreign_key "inspections", "restaurants"
-  add_foreign_key "restaurants", "owners"
 end
