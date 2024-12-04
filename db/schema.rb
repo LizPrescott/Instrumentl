@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_03_193508) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_04_194344) do
+  create_table "imports", force: :cascade do |t|
+    t.string "file_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "inspections", force: :cascade do |t|
     t.integer "inspection_score"
     t.date "inspection_date"
@@ -29,7 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_03_193508) do
     t.string "name"
     t.string "address"
     t.string "city"
-    t.string "postal_code"
+    t.integer "postal_code"
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,7 +43,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_03_193508) do
     t.string "owner_address"
     t.string "owner_city"
     t.string "owner_state"
-    t.string "owner_zip"
+    t.integer "owner_zip"
   end
 
   add_foreign_key "inspections", "restaurants"
