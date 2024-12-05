@@ -10,5 +10,5 @@ class Inspection < ApplicationRecord
     "Routine - Scheduled",
     "New Ownership"
   ]
-  enum :risk_category, ["Low Risk", "Moderate Risk", "High Risk"]
+  enum :risk_category, [ "Low Risk", "Moderate Risk", "High Risk" ]
 end

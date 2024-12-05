@@ -7,3 +7,4 @@ This is a proof of concept implementation of import functionality, using the tes
 - Break up the file into chunks for scalability. I chose SmarterCSV, rather than ruby's built-in csv library with an eye toward its bulk uploading functionality
 - Move the import to ActiveJob and parallelize using Sidekiq
 - Add better error handling so that import can proceed even if one row is malformed. Store the failed rows so that they can be corrected by the end user.
+- Configure more robust database such as postgres

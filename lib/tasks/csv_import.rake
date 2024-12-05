@@ -15,5 +15,5 @@ namespace :import do
       end
       @restaurant.inspections.create!(row_hash)
     end
-  end 
-end 
+  end
+end
