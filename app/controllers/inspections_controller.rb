@@ -21,7 +21,8 @@ class InspectionsController < ApplicationController
 
   # POST /inspections or /inspections.json
   def create
-    @inspection = Inspection.new(inspection_params)
+    @restaurant =  Restaurant.find_by_id(:restaurant_id)
+    @inspection = @restaurant.inspections.new(inspection_params)
 
     respond_to do |format|
       if @inspection.save

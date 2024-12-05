@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class InspectionsTest < ApplicationSystemTestCase
   setup do
+    @restaurant = restaurants(:one)
     @inspection = inspections(:one)
   end
 
@@ -17,9 +18,9 @@ class InspectionsTest < ApplicationSystemTestCase
     fill_in "Description", with: @inspection.description
     fill_in "Inspection date", with: @inspection.inspection_date
     fill_in "Inspection score", with: @inspection.inspection_score
-    fill_in "Inspection type", with: @inspection.inspection_type
+    fill_in "Inspection type", with: "Complaint"
     fill_in "Restaurant", with: @inspection.restaurant_id
-    fill_in "Risk category", with: @inspection.risk_category
+    fill_in "Risk category", with: "Moderate Risk"
     fill_in "Violation date", with: @inspection.violation_date
     fill_in "Violation type", with: @inspection.violation_type
     click_on "Create Inspection"
@@ -35,9 +36,9 @@ class InspectionsTest < ApplicationSystemTestCase
     fill_in "Description", with: @inspection.description
     fill_in "Inspection date", with: @inspection.inspection_date
     fill_in "Inspection score", with: @inspection.inspection_score
-    fill_in "Inspection type", with: @inspection.inspection_type
+    fill_in "Inspection type", with: "Complaint"
     fill_in "Restaurant", with: @inspection.restaurant_id
-    fill_in "Risk category", with: @inspection.risk_category
+    fill_in "Risk category", with: "Moderate Risk"
     fill_in "Violation date", with: @inspection.violation_date
     fill_in "Violation type", with: @inspection.violation_type
     click_on "Update Inspection"

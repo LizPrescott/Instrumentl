@@ -2,6 +2,7 @@ require "test_helper"
 
 class InspectionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @restaurant = restaurants(:one)
     @inspection = inspections(:one)
   end
 
