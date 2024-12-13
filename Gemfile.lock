@@ -294,7 +294,7 @@ GEM
       logger
       rack (>= 2.2.4)
       redis-client (>= 0.22.2)
-    smarter_csv (1.13.0)
+    smarter_csv (1.13.1)
     solid_cable (3.0.4)
       actioncable (>= 7.2)
       activejob (>= 7.2)
